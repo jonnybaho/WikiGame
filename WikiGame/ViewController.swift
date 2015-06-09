@@ -26,19 +26,31 @@ class ViewController: UIViewController {
         (?=.)    means followed by .
         */
         
-        let range = unparsedString.rangeOfString("(?<=extract':)[^\n]+(?=)", options:.RegularExpressionSearch)
-       
-        if range != nil{
+        let titleRange = unparsedString.rangeOfString("(?<='title':')[^']+(?=)", options:.RegularExpressionSearch)
+        let range = unparsedString.rangeOfString("(?<=extract':')[^\n]+(?=)", options:.RegularExpressionSearch)
+
+        if (range != nil && titleRange != nil){
             
-            let parsedString = unparsedString.substringWithRange(range!)
+            let titleString = unparsedString.substringWithRange(titleRange!)
+                // "Bill Gates"
+            // Bill + Gates 
+            let titleStringArr = titleString.componentsSeparatedByString(" ")
+            
+            var parsedString = unparsedString.substringWithRange(range!)
+
+            for (var anint = 0; anint < titleStringArr.count; anint++){
+                
+                parsedString = parsedString.stringByReplacingOccurrencesOfString(titleStringArr[anint], withString: "X")
+                
+            }
+            
             extractLabel.text = parsedString
-            
+
         }
         
     }
     
     
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
