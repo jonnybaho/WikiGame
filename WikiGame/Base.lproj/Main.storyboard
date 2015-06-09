@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WikiGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="run-OC-mqb">
+                                <rect key="frame" x="16" y="28" width="568" height="496"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BFy-nO-rK4">
+                                <rect key="frame" x="16" y="532" width="426" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="5Hb-2t-oVp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ygQ-pp-P9B">
+                                <rect key="frame" x="450" y="532" width="134" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="134" id="hQq-TA-Ddn"/>
+                                </constraints>
+                                <state key="normal" title="Guess!">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="guessButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RAM-Wx-Czh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="run-OC-mqb" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="8T8-Dr-Ad5"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="BFy-nO-rK4" secondAttribute="bottom" constant="38" id="BFn-GU-9K5"/>
+                            <constraint firstItem="BFy-nO-rK4" firstAttribute="top" secondItem="run-OC-mqb" secondAttribute="bottom" constant="8" symbolic="YES" id="C71-85-yOE"/>
+                            <constraint firstItem="BFy-nO-rK4" firstAttribute="top" secondItem="ygQ-pp-P9B" secondAttribute="top" id="CnG-aP-oBM"/>
+                            <constraint firstItem="BFy-nO-rK4" firstAttribute="leading" secondItem="run-OC-mqb" secondAttribute="leading" id="N9e-df-IWU"/>
+                            <constraint firstItem="run-OC-mqb" firstAttribute="trailing" secondItem="ygQ-pp-P9B" secondAttribute="trailing" id="St7-z5-Wnj"/>
+                            <constraint firstItem="ygQ-pp-P9B" firstAttribute="leading" secondItem="BFy-nO-rK4" secondAttribute="trailing" constant="8" symbolic="YES" id="V5Y-MR-3mq"/>
+                            <constraint firstItem="run-OC-mqb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="o4N-ae-Cx0"/>
+                            <constraint firstItem="run-OC-mqb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="rCq-RG-9As"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="extractLabel" destination="run-OC-mqb" id="caH-oX-h68"/>
+                        <outlet property="guessTextField" destination="BFy-nO-rK4" id="GAT-Xe-DYN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

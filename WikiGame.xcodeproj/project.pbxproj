@@ -1,0 +1,429 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CF43C4C41B268DDE00C09918 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF43C4C31B268DDE00C09918 /* AppDelegate.swift */; };
+		CF43C4C61B268DDE00C09918 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF43C4C51B268DDE00C09918 /* ViewController.swift */; };
+		CF43C4C91B268DDE00C09918 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF43C4C71B268DDE00C09918 /* Main.storyboard */; };
+		CF43C4CB1B268DDE00C09918 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF43C4CA1B268DDE00C09918 /* Images.xcassets */; };
+		CF43C4CE1B268DDE00C09918 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF43C4CC1B268DDE00C09918 /* LaunchScreen.xib */; };
+		CF43C4DA1B268DDE00C09918 /* WikiGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF43C4D91B268DDE00C09918 /* WikiGameTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CF43C4D41B268DDE00C09918 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF43C4B61B268DDE00C09918 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF43C4BD1B268DDE00C09918;
+			remoteInfo = WikiGame;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CF43C4BE1B268DDE00C09918 /* WikiGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WikiGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF43C4C21B268DDE00C09918 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF43C4C31B268DDE00C09918 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CF43C4C51B268DDE00C09918 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CF43C4C81B268DDE00C09918 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CF43C4CA1B268DDE00C09918 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CF43C4CD1B268DDE00C09918 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		CF43C4D31B268DDE00C09918 /* WikiGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WikiGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF43C4D81B268DDE00C09918 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF43C4D91B268DDE00C09918 /* WikiGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiGameTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CF43C4BB1B268DDE00C09918 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF43C4D01B268DDE00C09918 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CF43C4B51B268DDE00C09918 = {
+			isa = PBXGroup;
+			children = (
+				CF43C4C01B268DDE00C09918 /* WikiGame */,
+				CF43C4D61B268DDE00C09918 /* WikiGameTests */,
+				CF43C4BF1B268DDE00C09918 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CF43C4BF1B268DDE00C09918 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CF43C4BE1B268DDE00C09918 /* WikiGame.app */,
+				CF43C4D31B268DDE00C09918 /* WikiGameTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CF43C4C01B268DDE00C09918 /* WikiGame */ = {
+			isa = PBXGroup;
+			children = (
+				CF43C4C31B268DDE00C09918 /* AppDelegate.swift */,
+				CF43C4C51B268DDE00C09918 /* ViewController.swift */,
+				CF43C4C71B268DDE00C09918 /* Main.storyboard */,
+				CF43C4CA1B268DDE00C09918 /* Images.xcassets */,
+				CF43C4CC1B268DDE00C09918 /* LaunchScreen.xib */,
+				CF43C4C11B268DDE00C09918 /* Supporting Files */,
+			);
+			path = WikiGame;
+			sourceTree = "<group>";
+		};
+		CF43C4C11B268DDE00C09918 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CF43C4C21B268DDE00C09918 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CF43C4D61B268DDE00C09918 /* WikiGameTests */ = {
+			isa = PBXGroup;
+			children = (
+				CF43C4D91B268DDE00C09918 /* WikiGameTests.swift */,
+				CF43C4D71B268DDE00C09918 /* Supporting Files */,
+			);
+			path = WikiGameTests;
+			sourceTree = "<group>";
+		};
+		CF43C4D71B268DDE00C09918 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CF43C4D81B268DDE00C09918 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CF43C4BD1B268DDE00C09918 /* WikiGame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF43C4DD1B268DDE00C09918 /* Build configuration list for PBXNativeTarget "WikiGame" */;
+			buildPhases = (
+				CF43C4BA1B268DDE00C09918 /* Sources */,
+				CF43C4BB1B268DDE00C09918 /* Frameworks */,
+				CF43C4BC1B268DDE00C09918 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WikiGame;
+			productName = WikiGame;
+			productReference = CF43C4BE1B268DDE00C09918 /* WikiGame.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CF43C4D21B268DDE00C09918 /* WikiGameTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF43C4E01B268DDE00C09918 /* Build configuration list for PBXNativeTarget "WikiGameTests" */;
+			buildPhases = (
+				CF43C4CF1B268DDE00C09918 /* Sources */,
+				CF43C4D01B268DDE00C09918 /* Frameworks */,
+				CF43C4D11B268DDE00C09918 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CF43C4D51B268DDE00C09918 /* PBXTargetDependency */,
+			);
+			name = WikiGameTests;
+			productName = WikiGameTests;
+			productReference = CF43C4D31B268DDE00C09918 /* WikiGameTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CF43C4B61B268DDE00C09918 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Jonny Baho";
+				TargetAttributes = {
+					CF43C4BD1B268DDE00C09918 = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					CF43C4D21B268DDE00C09918 = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = CF43C4BD1B268DDE00C09918;
+					};
+				};
+			};
+			buildConfigurationList = CF43C4B91B268DDE00C09918 /* Build configuration list for PBXProject "WikiGame" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF43C4B51B268DDE00C09918;
+			productRefGroup = CF43C4BF1B268DDE00C09918 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CF43C4BD1B268DDE00C09918 /* WikiGame */,
+				CF43C4D21B268DDE00C09918 /* WikiGameTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CF43C4BC1B268DDE00C09918 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF43C4C91B268DDE00C09918 /* Main.storyboard in Resources */,
+				CF43C4CE1B268DDE00C09918 /* LaunchScreen.xib in Resources */,
+				CF43C4CB1B268DDE00C09918 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF43C4D11B268DDE00C09918 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CF43C4BA1B268DDE00C09918 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF43C4C61B268DDE00C09918 /* ViewController.swift in Sources */,
+				CF43C4C41B268DDE00C09918 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF43C4CF1B268DDE00C09918 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF43C4DA1B268DDE00C09918 /* WikiGameTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CF43C4D51B268DDE00C09918 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF43C4BD1B268DDE00C09918 /* WikiGame */;
+			targetProxy = CF43C4D41B268DDE00C09918 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CF43C4C71B268DDE00C09918 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF43C4C81B268DDE00C09918 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CF43C4CC1B268DDE00C09918 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF43C4CD1B268DDE00C09918 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CF43C4DB1B268DDE00C09918 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CF43C4DC1B268DDE00C09918 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CF43C4DE1B268DDE00C09918 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WikiGame/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CF43C4DF1B268DDE00C09918 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WikiGame/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		CF43C4E11B268DDE00C09918 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = WikiGameTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WikiGame.app/WikiGame";
+			};
+			name = Debug;
+		};
+		CF43C4E21B268DDE00C09918 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = WikiGameTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WikiGame.app/WikiGame";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CF43C4B91B268DDE00C09918 /* Build configuration list for PBXProject "WikiGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF43C4DB1B268DDE00C09918 /* Debug */,
+				CF43C4DC1B268DDE00C09918 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF43C4DD1B268DDE00C09918 /* Build configuration list for PBXNativeTarget "WikiGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF43C4DE1B268DDE00C09918 /* Debug */,
+				CF43C4DF1B268DDE00C09918 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF43C4E01B268DDE00C09918 /* Build configuration list for PBXNativeTarget "WikiGameTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF43C4E11B268DDE00C09918 /* Debug */,
+				CF43C4E21B268DDE00C09918 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CF43C4B61B268DDE00C09918 /* Project object */;
+}
