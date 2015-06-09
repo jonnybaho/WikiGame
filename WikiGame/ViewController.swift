@@ -10,11 +10,13 @@ import UIKit
 import Foundation
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var extractLabel: UILabel!
     @IBOutlet weak var guessTextField: UITextField!
+    @IBOutlet weak var titleLabel: UILabel!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
@@ -28,16 +30,13 @@ class ViewController: UIViewController {
         
         let titleRange = unparsedString.rangeOfString("(?<='title':')[^']+(?=)", options:.RegularExpressionSearch)
         let range = unparsedString.rangeOfString("(?<=extract':')[^\n]+(?=)", options:.RegularExpressionSearch)
-
+        
         if (range != nil && titleRange != nil){
             
             let titleString = unparsedString.substringWithRange(titleRange!)
-                // "Bill Gates"
-            // Bill + Gates 
             let titleStringArr = titleString.componentsSeparatedByString(" ")
-            
             var parsedString = unparsedString.substringWithRange(range!)
-
+            
             for (var anint = 0; anint < titleStringArr.count; anint++){
                 
                 parsedString = parsedString.stringByReplacingOccurrencesOfString(titleStringArr[anint], withString: "X")
@@ -46,6 +45,20 @@ class ViewController: UIViewController {
             
             extractLabel.text = parsedString
 
+            do {
+                
+                let regex:NSRegularExpression = try NSRegularExpression(pattern: "[A-Z]", options: NSRegularExpressionOptions.CaseInsensitive)
+                
+                let modifiedString = regex.stringByReplacingMatchesInString(titleString, options:NSMatchingOptions.WithTransparentBounds, range: NSMakeRange(0, titleString.characters.count), withTemplate: "X")
+                
+                titleLabel.text = modifiedString
+
+            } catch {
+                
+                print("Oh no!")
+                
+            }
+            
         }
         
     }
@@ -55,12 +68,11 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     @IBAction func guessButton(sender: AnyObject) {
         
         
-        
     }
-
+    
 }
 
