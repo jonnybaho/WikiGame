@@ -10,9 +10,20 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
+protocol GameReader {
+	func receivedNewGame(game: Game)
+}
+
 class GameProvider: NSObject {
 	
-	static func getGameObject() {
+	var delegate: GameReader
+	
+	
+	init(delegate: GameReader) {
+		self.delegate = delegate
+	}
+	
+	func getGameObject() {
 		Alamofire.request(.GET, "https://en.wikipedia.org/w/api.php?action=query&list=random&format=json&rnnamespace=0&rnlimit=1")
 			.responseJSON { (request, response, data, error) in
 				let json1 = JSON(data!)
@@ -24,7 +35,7 @@ class GameProvider: NSObject {
 						for (key: String, subJson: JSON) in pages {
 							//Do something you want
 							let game = Game(title: subJson["title"].stringValue, extract: subJson["extract"].stringValue)
-							println(game)
+							self.delegate.receivedNewGame(game)
 						}
 				}
 		}
