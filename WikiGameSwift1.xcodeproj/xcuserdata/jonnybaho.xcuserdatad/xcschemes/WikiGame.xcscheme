@@ -59,7 +59,7 @@
             BlueprintIdentifier = "CF43C4BD1B268DDE00C09918"
             BuildableName = "WikiGame.app"
             BlueprintName = "WikiGame"
-            ReferencedContainer = "container:WikiGame.xcodeproj">
+            ReferencedContainer = "container:WikiGameSwift1.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -79,7 +79,7 @@
             BlueprintIdentifier = "CF43C4BD1B268DDE00C09918"
             BuildableName = "WikiGame.app"
             BlueprintName = "WikiGame"
-            ReferencedContainer = "container:WikiGame.xcodeproj">
+            ReferencedContainer = "container:WikiGameSwift1.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
