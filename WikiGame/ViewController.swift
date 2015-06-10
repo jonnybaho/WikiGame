@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var extractLabel: UILabel!
     @IBOutlet weak var guessTextField: UITextField!
     @IBOutlet weak var titleLabel: UILabel!
+    var titleString = ""
     
     override func viewDidLoad() {
         
@@ -33,7 +34,7 @@ class ViewController: UIViewController {
         
         if (range != nil && titleRange != nil){
             
-            let titleString = unparsedString.substringWithRange(titleRange!)
+            titleString = unparsedString.substringWithRange(titleRange!)
             let titleStringArr = titleString.componentsSeparatedByString(" ")
             var parsedString = unparsedString.substringWithRange(range!)
             
@@ -71,8 +72,37 @@ class ViewController: UIViewController {
     
     @IBAction func guessButton(sender: AnyObject) {
         
+        if (guessTextField.text == titleString ){
+            
+            titleLabel.text = titleString + " - You were right!"
+            
+        }else {
+            
+            titleLabel.text = titleLabel.text! + " - You were wrong!"
+            
+        }
         
     }
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
+    @IBAction func tappedView(sender: AnyObject) {
+        
+        textFieldShouldReturn(guessTextField)
+        
+    }
+    
+    func showSomeLetters(){
+        
+        let amount = UInt32(titleString.characters.count)
+        let randomInt = Int(arc4random_uniform(amount)+1)
+        titleString.characters
+        
+        
+        
+    }
 }
 

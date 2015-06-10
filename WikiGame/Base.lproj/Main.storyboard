@@ -24,23 +24,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Extract" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="run-OC-mqb">
-                                <rect key="frame" x="16" y="70" width="568" height="454"/>
+                                <rect key="frame" x="16" y="138" width="568" height="454"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="21"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BFy-nO-rK4">
-                                <rect key="frame" x="16" y="532" width="426" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBT-LJ-Ry1">
+                                <rect key="frame" x="20" y="20" width="564" height="42"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="T3Z-gl-j8N"/>
+                                    <constraint firstAttribute="height" constant="42" id="Po2-pB-xAx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BFy-nO-rK4">
+                                <rect key="frame" x="16" y="70" width="426" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Dd7-zO-6dt"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ygQ-pp-P9B">
-                                <rect key="frame" x="450" y="532" width="134" height="30"/>
+                                <rect key="frame" x="450" y="70" width="134" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="134" id="F6U-KM-XxE"/>
+                                    <constraint firstAttribute="width" constant="134" id="Nzh-xR-09h"/>
                                 </constraints>
                                 <state key="normal" title="Guess!">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -49,31 +58,26 @@
                                     <action selector="guessButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RAM-Wx-Czh"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBT-LJ-Ry1">
-                                <rect key="frame" x="20" y="20" width="564" height="42"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="8pA-BC-BeT"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="BFy-nO-rK4" secondAttribute="bottom" constant="38" id="3wO-Z9-gp5"/>
-                            <constraint firstItem="ygQ-pp-P9B" firstAttribute="top" secondItem="BFy-nO-rK4" secondAttribute="top" id="46x-9m-gnK"/>
-                            <constraint firstItem="vBT-LJ-Ry1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="60l-hE-LE0"/>
-                            <constraint firstItem="run-OC-mqb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8tm-cm-mqT"/>
-                            <constraint firstItem="BFy-nO-rK4" firstAttribute="top" secondItem="run-OC-mqb" secondAttribute="bottom" constant="8" symbolic="YES" id="ANC-ZN-ER9"/>
-                            <constraint firstItem="run-OC-mqb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-4" id="EWz-ll-loE"/>
-                            <constraint firstItem="run-OC-mqb" firstAttribute="leading" secondItem="BFy-nO-rK4" secondAttribute="leading" id="KY3-AL-HYe"/>
-                            <constraint firstItem="ygQ-pp-P9B" firstAttribute="leading" secondItem="BFy-nO-rK4" secondAttribute="trailing" constant="8" symbolic="YES" id="LXG-7i-Bph"/>
-                            <constraint firstItem="run-OC-mqb" firstAttribute="top" secondItem="vBT-LJ-Ry1" secondAttribute="bottom" constant="8" symbolic="YES" id="Yzg-2Z-Ghf"/>
-                            <constraint firstItem="ygQ-pp-P9B" firstAttribute="trailing" secondItem="run-OC-mqb" secondAttribute="trailing" id="cha-q0-6bw"/>
-                            <constraint firstItem="vBT-LJ-Ry1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ewg-dX-Dwy"/>
-                            <constraint firstItem="run-OC-mqb" firstAttribute="trailing" secondItem="vBT-LJ-Ry1" secondAttribute="trailing" id="rbo-7W-8bB"/>
+                            <constraint firstItem="ygQ-pp-P9B" firstAttribute="top" secondItem="BFy-nO-rK4" secondAttribute="top" id="1xB-ME-skl"/>
+                            <constraint firstItem="vBT-LJ-Ry1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="3pT-HC-aqS"/>
+                            <constraint firstItem="run-OC-mqb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Dlj-AD-5zf"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="run-OC-mqb" secondAttribute="bottom" constant="8" symbolic="YES" id="T59-Hw-qBp"/>
+                            <constraint firstItem="ygQ-pp-P9B" firstAttribute="trailing" secondItem="run-OC-mqb" secondAttribute="trailing" id="VeI-Bu-Xcz"/>
+                            <constraint firstItem="ygQ-pp-P9B" firstAttribute="trailing" secondItem="vBT-LJ-Ry1" secondAttribute="trailing" id="e02-nU-bya"/>
+                            <constraint firstItem="vBT-LJ-Ry1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="fKL-1k-ZDv"/>
+                            <constraint firstItem="ygQ-pp-P9B" firstAttribute="leading" secondItem="BFy-nO-rK4" secondAttribute="trailing" constant="8" symbolic="YES" id="kZf-gn-hKL"/>
+                            <constraint firstItem="BFy-nO-rK4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-4" id="kke-ev-6HJ"/>
+                            <constraint firstItem="run-OC-mqb" firstAttribute="top" secondItem="BFy-nO-rK4" secondAttribute="bottom" constant="38" id="mYN-YN-XeV"/>
+                            <constraint firstItem="BFy-nO-rK4" firstAttribute="leading" secondItem="run-OC-mqb" secondAttribute="leading" id="sxp-92-5xf"/>
+                            <constraint firstItem="BFy-nO-rK4" firstAttribute="top" secondItem="vBT-LJ-Ry1" secondAttribute="bottom" constant="8" symbolic="YES" id="wND-9k-ujr"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="mgu-rq-9WI" appends="YES" id="yea-AE-nfZ"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="extractLabel" destination="run-OC-mqb" id="caH-oX-h68"/>
@@ -82,6 +86,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="mgu-rq-9WI">
+                    <connections>
+                        <action selector="tappedView:" destination="BYZ-38-t0r" id="HK4-LB-Vd4"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="340" y="353"/>
         </scene>
