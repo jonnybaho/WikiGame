@@ -103,31 +103,43 @@ class ViewController: UIViewController {
         textFieldShouldReturn(guessTextField)
         
     }
+	
+	func replaceAllOccurencesInString(string: String, originalString: String, character: Character) -> String {
+		let characters = Array(originalString)
+		var characters2 = Array(string)
+		let result = ""
+		
+		
+		for (var i = 0; i < characters.count; i++) {
+			characters2[i] = characters[i] == character ? character : "X"
+		}
+		return String(characters2)
+	}
     
     func showSomeLetters(){
         
-        let amount = UInt32(count(titleString))
-        let randomInt = Int(arc4random_uniform(amount))
-        
-        let indexesToReplace = Set
-        
-        let charArray = Array(titleString)
-        
-        if (charArray[randomInt] != " "){
-            
-            var firstChar = charArray[randomInt]
-            Array(arrayLiteral: titleLabel.text)[randomInt] = firstChar
-            
-            // Replace X with the character
-            
-            ///ewgiuhewgohewgoewijgewoij4wy4wy
-        }else {
-            
-            showSomeLetters()
-            // Bad code: refreshes the function if the random int lands on a spacebar
-            
-        }
-        
+//        let amount = UInt32(count(titleString))
+//        let randomInt = Int(arc4random_uniform(amount))
+//        
+//        let indexesToReplace = Set<Int>(randomInt)
+//        
+//        let charArray = Array(titleString)
+//        
+//        if (charArray[randomInt] != " "){
+//            
+//            var firstChar = charArray[randomInt]
+//            Array(arrayLiteral: titleLabel.text)[randomInt] = firstChar
+//            
+//            // Replace X with the character
+//            
+//            ///ewgiuhewgohewgoewijgewoij4wy4wy
+//        }else {
+//            
+//            showSomeLetters()
+//            // Bad code: refreshes the function if the random int lands on a spacebar
+//            
+//        }
+		
     }
 }
 
