@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, GameReader {
     
     @IBOutlet weak var extractLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
@@ -26,8 +26,18 @@ class ViewController: UIViewController {
         
         //TODO: Get the JSON and parse it
 		
-        GameProvider.getGameObject()
+        let gameProvider = GameProvider(delegate: self)
+        gameProvider.getGameObject()
         let unparsedString = "{'query':{'pages':{'3747':{'pageid':3747,'ns':0,'title':'Bill Gates','extract':'William Henry 'Bill' Gates III (born October 28, 1955) is an American business magnate, philanthropist, investor, computer programmer, and inventor. Gates originally established his reputation as the co-founder of Microsoft, the world largest PC software company, with Paul Allen. During his career at Microsoft, Gates held the positions of chairman, CEO and chief software architect, and was also the largest individual shareholder until May 2014. He has also authored and co-authored several books.\nToday he is consist'"
+        
+        
+        labelView.layer.cornerRadius = 10
+        
+        
+        
+    }
+    
+    func updateUI(game: Game) {
         
         /*
         (?<=://) means preceded by ://
@@ -35,39 +45,33 @@ class ViewController: UIViewController {
         (?=.)    means followed by .
         */
         
-        let titleRange = unparsedString.rangeOfString("(?<='title':')[^']+(?=)", options:.RegularExpressionSearch)
-        let range = unparsedString.rangeOfString("(?<=extract':')[^\n]+(?=)", options:.RegularExpressionSearch)
+        titleString = game.title.uppercaseString
+        let titleStringArr = titleString.componentsSeparatedByString(" ")
+        var parsedString = game.extract
         
-        if (range != nil && titleRange != nil){
+        var ierror: NSError?
+        let regex:NSRegularExpression =  NSRegularExpression(pattern: "[A-Z]", options: NSRegularExpressionOptions.CaseInsensitive, error: &ierror)!
+        
+        let modifiedString = regex.stringByReplacingMatchesInString(titleString, options:NSMatchingOptions.WithTransparentBounds, range: NSMakeRange(0, count(titleString)), withTemplate: "X")
+        
+        titleLabel.text = modifiedString
+        
+        for (var anint = 0; anint < titleStringArr.count; anint++){
             
-            titleString = unparsedString.substringWithRange(titleRange!).uppercaseString
-            let titleStringArr = titleString.componentsSeparatedByString(" ")
-            var parsedString = unparsedString.substringWithRange(range!)
-            
-            for (var anint = 0; anint < titleStringArr.count; anint++){
-                
-                parsedString = parsedString.stringByReplacingOccurrencesOfString(titleStringArr[anint], withString: "X")
-                
-            }
-            
-            extractLabel.text = parsedString
-
-            
-            var ierror: NSError?
-            let regex:NSRegularExpression =  NSRegularExpression(pattern: "[A-Z]", options: NSRegularExpressionOptions.CaseInsensitive, error: &ierror)!
-            
-            let modifiedString = regex.stringByReplacingMatchesInString(titleString, options:NSMatchingOptions.WithTransparentBounds, range: NSMakeRange(0, count(titleString)), withTemplate: "X")
-                
-            titleLabel.text = modifiedString
+            parsedString = parsedString.stringByReplacingOccurrencesOfString(titleStringArr[anint], withString: "X")
             
         }
         
+        extractLabel.text = parsedString
+        
         showSomeLetters()
         
-        labelView.layer.cornerRadius = 10
         
-        
-        
+    }
+    
+    func receivedNewGame(game: Game) {
+        //TODO: something
+        updateUI(game)
     }
     
     
