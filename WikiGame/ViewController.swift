@@ -12,10 +12,12 @@ import Foundation
 class ViewController: UIViewController {
     
     @IBOutlet weak var extractLabel: UILabel!
-    @IBOutlet weak var guessTextField: UITextField!
     @IBOutlet weak var titleLabel: UILabel!
     var titleString = ""
     @IBOutlet weak var labelView: UIView!
+    @IBOutlet weak var keyboardView: UIView!
+    
+    @IBOutlet var aButton: UIButton!
     
     override func viewDidLoad() {
         
@@ -63,6 +65,8 @@ class ViewController: UIViewController {
         
         labelView.layer.cornerRadius = 10
         
+        
+        
     }
     
     
@@ -71,23 +75,23 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func guessButton(sender: AnyObject) {
-        
-        if (guessTextField.text.lowercaseString == titleString.lowercaseString ){
-            
-            titleLabel.text = titleString + " - You were right!"
-            
-        }else {
-            
-            titleLabel.text = titleLabel.text! + " - You were wrong!"
-            
-            UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: nil, animations: { () -> Void in
-                
-                    // Bouncing animation? To indicate the wrong answer
-                
-                }, completion: nil)
-            
-        }
+     func guessButton(sender: AnyObject) {
+//        
+//        if (guessTextField.text.lowercaseString == titleString.lowercaseString ){
+//            
+//            titleLabel.text = titleString + " - You were right!"
+//            
+//        }else {
+//            
+//            titleLabel.text = titleLabel.text! + " - You were wrong!"
+//            
+//            UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: nil, animations: { () -> Void in
+//                
+//                    // Bouncing animation? To indicate the wrong answer
+//                
+//                }, completion: nil)
+//            
+//        }
         
     }
     
@@ -98,47 +102,41 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func tappedView(sender: AnyObject) {
-        
-        textFieldShouldReturn(guessTextField)
-        
-    }
-	
 	func replaceAllOccurencesInString(string: String, originalString: String, character: Character) -> String {
+        
 		let characters = Array(originalString)
 		var characters2 = Array(string)
 		let result = ""
 		
 		
 		for (var i = 0; i < characters.count; i++) {
+            if characters[i] == " " { continue }
 			characters2[i] = characters[i] == character ? character : "X"
 		}
 		return String(characters2)
-	}
+	
+    }
     
     func showSomeLetters(){
         
-//        let amount = UInt32(count(titleString))
-//        let randomInt = Int(arc4random_uniform(amount))
-//        
-//        let indexesToReplace = Set<Int>(randomInt)
-//        
-//        let charArray = Array(titleString)
-//        
-//        if (charArray[randomInt] != " "){
-//            
-//            var firstChar = charArray[randomInt]
-//            Array(arrayLiteral: titleLabel.text)[randomInt] = firstChar
-//            
-//            // Replace X with the character
-//            
-//            ///ewgiuhewgohewgoewijgewoij4wy4wy
-//        }else {
-//            
-//            showSomeLetters()
-//            // Bad code: refreshes the function if the random int lands on a spacebar
-//            
-//        }
+        let amount = UInt32(count(titleString))
+        let randomInt = Int(arc4random_uniform(amount))
+        
+        let charArray = Array(titleString)
+        
+        if (charArray[randomInt] != " "){
+            
+            var firstChar = charArray[randomInt]
+            titleLabel.text = replaceAllOccurencesInString(titleLabel.text!, originalString: titleString, character: firstChar)
+            // Replace X with the character
+            
+            ///ewgiuhewgohewgoewijgewoij4wy4wy
+        }else {
+            
+            showSomeLetters()
+            // Bad code: refreshes the function if the random int lands on a spacebar
+            
+        }
 		
     }
 }
