@@ -19,19 +19,16 @@ func replaceAllOccurencesInString(string: String, originalString: String, charac
 replaceAllOccurencesInString("XXXXX", "STEVE", "E")
 
 
-
-
-func processGuess(titleString: String, originalString: String, guess: Character) -> String {
-    
-    let characters = Array(originalString)
-    var characters2 = Array(titleString)
-    
-    for (var i = 0; i < characters.count; i++) {
-        characters2[i] = String(characters[i]).lowercaseString == String(guess).lowercaseString ? guess : characters2[i]
-    }
-    return String(characters2)
-    
+func processGuess(string: String, originalString: String, guess:Character) -> String {
+	let characters = Array(originalString)
+	var characters2 = Array(string)
+	
+	for (var i = 0; i < characters.count; i++) {
+		characters2[i] = characters[i] == guess ? guess : characters2[i]
+	}
+	return String(characters2)
 }
 
-
-processGuess("XXXX", "COCO", Character("C"))
+let ans = processGuess("SXXXX", "STEVE", "T")
+let ans2 = processGuess(ans, "STEVE", "E")
+processGuess(ans2, "STEVE", "V")
