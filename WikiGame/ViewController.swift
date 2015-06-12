@@ -17,6 +17,7 @@ class ViewController: UIViewController, GameReader, UICollectionViewDataSource, 
     @IBOutlet weak var labelView: UIView!
     @IBOutlet var collectionView: UICollectionView!
     var game: Game = Game(title: "title", extract: "extract")
+	var characterArray: [Character] = []
     
     override func viewDidLoad() {
         
@@ -25,6 +26,7 @@ class ViewController: UIViewController, GameReader, UICollectionViewDataSource, 
         
         //TODO: Get the JSON and parse it
 		
+		initializeCharacterArray()
         let gameProvider = GameProvider(delegate: self)
         gameProvider.getGameObject()
         let unparsedString = "{'query':{'pages':{'3747':{'pageid':3747,'ns':0,'title':'Bill Gates','extract':'William Henry 'Bill' Gates III (born October 28, 1955) is an American business magnate, philanthropist, investor, computer programmer, and inventor. Gates originally established his reputation as the co-founder of Microsoft, the world largest PC software company, with Paul Allen. During his career at Microsoft, Gates held the positions of chairman, CEO and chief software architect, and was also the largest individual shareholder until May 2014. He has also authored and co-authored several books.\nToday he is consist'"
@@ -38,6 +40,12 @@ class ViewController: UIViewController, GameReader, UICollectionViewDataSource, 
         collectionView.registerNib(nib, forCellWithReuseIdentifier: "letterCell")
         
     }
+	
+	func initializeCharacterArray() {
+		for i in 0...25 {
+			characterArray.append(Character(UnicodeScalar(65+i)))
+		}
+	}
     
     func updateUI(game: Game) {
         
@@ -119,7 +127,7 @@ class ViewController: UIViewController, GameReader, UICollectionViewDataSource, 
 		
 		for (var i = 0; i < characters.count; i++) {
             if characters[i] == " " { continue }
-			characters2[i] = String(characters[i]).lowercaseString == String(character).lowercaseString ? character : "X"
+			characters2[i] = String(characters[i]).lowercaseString == String(character).lowercaseString ? characters[i] : "X"
 		}
 		return String(characters2)
 	
@@ -132,7 +140,7 @@ class ViewController: UIViewController, GameReader, UICollectionViewDataSource, 
 		var characters2 = Array(string)
 		
 		for (var i = 0; i < characters.count; i++) {
-			characters2[i] = characters[i] == guess ? guess : characters2[i]
+			characters2[i] = String(characters[i]).uppercaseString == String(guess).uppercaseString ? characters[i] : characters2[i]
 		}
 		return String(characters2)
 	}
@@ -175,7 +183,7 @@ class ViewController: UIViewController, GameReader, UICollectionViewDataSource, 
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("letterCell", forIndexPath: indexPath) as! letterCollectionViewCell
         let row = indexPath.row
-        cell.letter = String(UnicodeScalar(65+row))
+        cell.letter = String(characterArray[row])
         return cell
         
     }
@@ -187,8 +195,8 @@ class ViewController: UIViewController, GameReader, UICollectionViewDataSource, 
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("letterCell", forIndexPath: indexPath) as! letterCollectionViewCell
 		let title = titleLabel.text!
 		let originalString = game.title
-		let guess = cell.titleLabel!.text!
-        titleLabel.text = processGuess(titleLabel.text!, originalString: game.title, guess: Character(cell.titleLabel!.text!))
+		let guess = characterArray[indexPath.row]
+        titleLabel.text = processGuess(titleLabel.text!, originalString: game.title, guess: characterArray[indexPath.row])
         
     }
 /*
