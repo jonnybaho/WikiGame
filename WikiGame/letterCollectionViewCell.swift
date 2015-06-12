@@ -10,13 +10,13 @@ import UIKit
 
 class letterCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet var keyboardButton: UIButton!
+    @IBOutlet var titleLabel: UILabel!
     //@property (nonatomic) CGSize estimatedItemSize NS_AVAILABLE_IOS(8_0);
     
     var letter = "" {
         didSet {
             
-            keyboardButton.titleLabel?.text = letter
+            titleLabel?.text = letter
         
         }
         

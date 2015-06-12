@@ -127,17 +127,15 @@ class ViewController: UIViewController, GameReader, UICollectionViewDataSource, 
     
     //MARK: On collectionViewCell tapped
     
-    func processGuess(titleString: String, originalString: String, guess: Character) -> String {
-        
-        let characters = Array(originalString)
-        var characters2 = Array(titleString)
-        
-        for (var i = 0; i < characters.count; i++) {
-            characters2[i] = String(characters[i]).lowercaseString == String(guess).lowercaseString ? guess : characters2[i]
-        }
-        return String(characters2)
-        
-    }
+	func processGuess(string: String, originalString: String, guess:Character) -> String {
+		let characters = Array(originalString)
+		var characters2 = Array(string)
+		
+		for (var i = 0; i < characters.count; i++) {
+			characters2[i] = characters[i] == guess ? guess : characters2[i]
+		}
+		return String(characters2)
+	}
     
     func showSomeLetters(){
         
@@ -187,7 +185,10 @@ class ViewController: UIViewController, GameReader, UICollectionViewDataSource, 
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("letterCell", forIndexPath: indexPath) as! letterCollectionViewCell
-        titleLabel.text = processGuess(titleLabel.text!, originalString: game.title, guess: Character(cell.keyboardButton.titleLabel!.text!))
+		let title = titleLabel.text!
+		let originalString = game.title
+		let guess = cell.titleLabel!.text!
+        titleLabel.text = processGuess(titleLabel.text!, originalString: game.title, guess: Character(cell.titleLabel!.text!))
         
     }
 /*
