@@ -87,11 +87,11 @@ class ViewController: UIViewController, GameReader, UICollectionViewDataSource, 
 	}
 	
 	func receivedNewGame(game: Game) {
-//		let newGame = Game(title: "hello", extract: "hello")
-//		self.game = newGame
-//		updateUI(newGame)
-		self.game = game
-		updateUI(game)
+		let newGame = Game(title: "hello's world", extract: "hello")
+		self.game = newGame
+		updateUI(newGame)
+//		self.game = game
+//		updateUI(game)
 	}
 	
 	
@@ -112,10 +112,10 @@ class ViewController: UIViewController, GameReader, UICollectionViewDataSource, 
 		let characters = Array(originalString)
 		var characters2 = Array(string)
 		let result = ""
-		
+		let nonAlphaCharacterRegex = "[a-zA-Z]"
 		
 		for (var i = 0; i < characters.count; i++) {
-			if characters[i] == " " { continue }
+			if String(character) =~ nonAlphaCharacterRegex { continue }
 			characters2[i] = String(characters[i]).lowercaseString == String(character).lowercaseString ? characters[i] : "X"
 		}
 		return String(characters2)
