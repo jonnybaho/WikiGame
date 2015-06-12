@@ -18,6 +18,8 @@ class ViewController: UIViewController, GameReader, UICollectionViewDataSource, 
     @IBOutlet var collectionView: UICollectionView!
     var game: Game = Game(title: "title", extract: "extract")
 	var characterArray: [Character] = []
+    var points = 500
+    @IBOutlet var pointsLabel: UILabel!
     
     override func viewDidLoad() {
         
@@ -29,8 +31,6 @@ class ViewController: UIViewController, GameReader, UICollectionViewDataSource, 
 		initializeCharacterArray()
         let gameProvider = GameProvider(delegate: self)
         gameProvider.getGameObject()
-        let unparsedString = "{'query':{'pages':{'3747':{'pageid':3747,'ns':0,'title':'Bill Gates','extract':'William Henry 'Bill' Gates III (born October 28, 1955) is an American business magnate, philanthropist, investor, computer programmer, and inventor. Gates originally established his reputation as the co-founder of Microsoft, the world largest PC software company, with Paul Allen. During his career at Microsoft, Gates held the positions of chairman, CEO and chief software architect, and was also the largest individual shareholder until May 2014. He has also authored and co-authored several books.\nToday he is consist'"
-        
         
         labelView.layer.cornerRadius = 10
         
@@ -91,26 +91,6 @@ class ViewController: UIViewController, GameReader, UICollectionViewDataSource, 
         // Dispose of any resources that can be recreated.
     }
     
-     func guessButton(sender: AnyObject) {
-//        
-//        if (guessTextField.text.lowercaseString == titleString.lowercaseString ){
-//            
-//            titleLabel.text = titleString + " - You were right!"
-//            
-//        }else {
-//            
-//            titleLabel.text = titleLabel.text! + " - You were wrong!"
-//            
-//            UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: nil, animations: { () -> Void in
-//                
-//                    // Bouncing animation? To indicate the wrong answer
-//                
-//                }, completion: nil)
-//            
-//        }
-        
-    }
-    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         
         self.view.endEditing(true)
@@ -139,10 +119,19 @@ class ViewController: UIViewController, GameReader, UICollectionViewDataSource, 
 		let characters = Array(originalString)
 		var characters2 = Array(string)
 		
-		for (var i = 0; i < characters.count; i++) {
-			characters2[i] = String(characters[i]).uppercaseString == String(guess).uppercaseString ? characters[i] : characters2[i]
-		}
-		return String(characters2)
+        if ((originalString.rangeOfString(String(guess))) != nil){
+            
+            for (var i = 0; i < characters.count; i++) {
+                characters2[i] = String(characters[i]).uppercaseString == String(guess).uppercaseString ? characters[i] : characters2[i]
+            }
+            
+        }else{
+            
+            incorrectAnswer()
+            
+        }
+        
+        return String(characters2)
 	}
     
     func showSomeLetters(){
@@ -199,10 +188,13 @@ class ViewController: UIViewController, GameReader, UICollectionViewDataSource, 
         titleLabel.text = processGuess(titleLabel.text!, originalString: game.title, guess: characterArray[indexPath.row])
         
     }
-/*
-    extension String {
-        func
+    
+    func incorrectAnswer(){
+        if (points >= 0){
+        points = points-50
+        pointsLabel.text = "Points: \(points)"
+        }
     }
-  */
+
 }
 

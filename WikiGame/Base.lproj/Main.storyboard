@@ -23,9 +23,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBT-LJ-Ry1">
-                                <rect key="frame" x="20" y="20" width="564" height="42"/>
+                                <rect key="frame" x="20" y="20" width="453" height="42"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="d5b-Ib-k0F"/>
+                                    <constraint firstAttribute="height" constant="42" id="fhq-Fe-yg7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -74,26 +74,39 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Points: 500" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bg0-RD-tP2">
+                                <rect key="frame" x="481" y="20" width="103" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="103" id="DJA-3c-EV1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="vBT-LJ-Ry1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="4" id="3qa-3N-iiE"/>
+                            <constraint firstItem="Bg0-RD-tP2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="7Xe-tU-Add"/>
+                            <constraint firstItem="Bg0-RD-tP2" firstAttribute="trailing" secondItem="kLW-U1-O5p" secondAttribute="trailing" id="7sy-6y-mwG"/>
+                            <constraint firstItem="Bg0-RD-tP2" firstAttribute="baseline" secondItem="vBT-LJ-Ry1" secondAttribute="baseline" id="CIT-GT-KxE"/>
                             <constraint firstItem="kLW-U1-O5p" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="SVw-dS-EcS"/>
                             <constraint firstItem="kLW-U1-O5p" firstAttribute="trailing" secondItem="qZZ-W7-LUH" secondAttribute="trailing" id="Ura-bp-f3N"/>
                             <constraint firstItem="qZZ-W7-LUH" firstAttribute="top" secondItem="kLW-U1-O5p" secondAttribute="bottom" constant="8" symbolic="YES" id="VHt-dq-6Q6"/>
-                            <constraint firstItem="vBT-LJ-Ry1" firstAttribute="trailing" secondItem="kLW-U1-O5p" secondAttribute="trailing" id="am3-WG-fs9"/>
-                            <constraint firstItem="kLW-U1-O5p" firstAttribute="top" secondItem="vBT-LJ-Ry1" secondAttribute="bottom" constant="8" symbolic="YES" id="cXr-ap-MoK"/>
+                            <constraint firstItem="Bg0-RD-tP2" firstAttribute="leading" secondItem="vBT-LJ-Ry1" secondAttribute="trailing" constant="8" symbolic="YES" id="eRv-RF-l4u"/>
                             <constraint firstItem="kLW-U1-O5p" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="gds-tf-3um"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qZZ-W7-LUH" secondAttribute="bottom" constant="8" symbolic="YES" id="ngl-RI-IjI"/>
-                            <constraint firstItem="vBT-LJ-Ry1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="sWe-CC-arC"/>
-                            <constraint firstItem="vBT-LJ-Ry1" firstAttribute="leading" secondItem="qZZ-W7-LUH" secondAttribute="leading" id="t3j-5a-sx8"/>
-                            <constraint firstItem="vBT-LJ-Ry1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="4" id="tnt-hm-cnW"/>
+                            <constraint firstItem="vBT-LJ-Ry1" firstAttribute="leading" secondItem="qZZ-W7-LUH" secondAttribute="leading" id="rCi-M9-UV6"/>
+                            <constraint firstItem="kLW-U1-O5p" firstAttribute="top" secondItem="vBT-LJ-Ry1" secondAttribute="bottom" constant="8" symbolic="YES" id="t3G-nv-0FN"/>
+                            <constraint firstItem="vBT-LJ-Ry1" firstAttribute="top" secondItem="Bg0-RD-tP2" secondAttribute="top" id="zfZ-fS-K8p"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="qZZ-W7-LUH" id="WKm-rS-fjJ"/>
                         <outlet property="extractLabel" destination="run-OC-mqb" id="caH-oX-h68"/>
                         <outlet property="labelView" destination="kLW-U1-O5p" id="YKp-ZS-nye"/>
+                        <outlet property="pointsLabel" destination="Bg0-RD-tP2" id="uxF-62-H3c"/>
                         <outlet property="titleLabel" destination="vBT-LJ-Ry1" id="DC4-e9-uhH"/>
                     </connections>
                 </viewController>
