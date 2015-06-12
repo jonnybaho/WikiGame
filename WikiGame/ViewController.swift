@@ -198,6 +198,7 @@ class ViewController: UIViewController, GameReader, UICollectionViewDataSource, 
 		let guess = characterArray[indexPath.row]
 		titleLabel.text = processGuess(titleLabel.text!, originalString: game.title, guess: characterArray[indexPath.row])
 		if gameFinished(titleLabel.text!) {
+            total += points
 			updateTotalScore()
 			saveTotalScore()
 			resetPoints()
@@ -226,7 +227,6 @@ class ViewController: UIViewController, GameReader, UICollectionViewDataSource, 
 	}
 	
 	func updateTotalScore() {
-		total += points
 		totalScore.text = "Total Score: \(total)"
 	}
 	
