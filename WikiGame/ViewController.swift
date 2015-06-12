@@ -81,7 +81,7 @@ class ViewController: UIViewController, GameReader, UICollectionViewDataSource, 
     
     func receivedNewGame(game: Game) {
         self.game = game
-        updateUI(game)
+        updateUI(newGame)
     }
     
     
