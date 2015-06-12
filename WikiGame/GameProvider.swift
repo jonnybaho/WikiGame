@@ -16,12 +16,7 @@ protocol GameReader {
 
 class GameProvider: NSObject {
 	
-	var delegate: GameReader
-	
-	
-	init(delegate: GameReader) {
-		self.delegate = delegate
-	}
+	var delegate: GameReader?
 	
 	func getGameObject() {
 		Alamofire.request(.GET, "https://en.wikipedia.org/w/api.php?action=query&list=random&format=json&rnnamespace=0&rnlimit=1")
@@ -35,7 +30,7 @@ class GameProvider: NSObject {
 						for (key: String, subJson: JSON) in pages {
 							//Do something you want
 							let game = Game(title: subJson["title"].stringValue, extract: subJson["extract"].stringValue)
-							self.delegate.receivedNewGame(game)
+							self.delegate?.receivedNewGame(game)
 						}
 				}
 		}
