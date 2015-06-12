@@ -15,6 +15,9 @@
 		CF43C4CB1B268DDE00C09918 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF43C4CA1B268DDE00C09918 /* Images.xcassets */; };
 		CF43C4CE1B268DDE00C09918 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF43C4CC1B268DDE00C09918 /* LaunchScreen.xib */; };
 		CF43C4DA1B268DDE00C09918 /* WikiGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF43C4D91B268DDE00C09918 /* WikiGameTests.swift */; };
+		CF4FD3981B2A2B5E00330645 /* letterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4FD3961B2A2B5E00330645 /* letterCollectionViewCell.swift */; };
+		CF4FD3991B2A2B5E00330645 /* letterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF4FD3971B2A2B5E00330645 /* letterCollectionViewCell.xib */; };
+		CF4FD39B1B2A597000330645 /* MyCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4FD39A1B2A597000330645 /* MyCollectionViewController.swift */; };
 		DBD038E6CF18FF4B3A9CF26F /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 957F499146F75A24A2ECB4BC /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -45,6 +48,9 @@
 		CF43C4D31B268DDE00C09918 /* WikiGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WikiGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF43C4D81B268DDE00C09918 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF43C4D91B268DDE00C09918 /* WikiGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiGameTests.swift; sourceTree = "<group>"; };
+		CF4FD3961B2A2B5E00330645 /* letterCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = letterCollectionViewCell.swift; sourceTree = "<group>"; };
+		CF4FD3971B2A2B5E00330645 /* letterCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = letterCollectionViewCell.xib; sourceTree = "<group>"; };
+		CF4FD39A1B2A597000330645 /* MyCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,11 +113,14 @@
 		CF43C4C01B268DDE00C09918 /* WikiGame */ = {
 			isa = PBXGroup;
 			children = (
+				CF4FD3961B2A2B5E00330645 /* letterCollectionViewCell.swift */,
+				CF4FD3971B2A2B5E00330645 /* letterCollectionViewCell.xib */,
 				CF43C4C31B268DDE00C09918 /* AppDelegate.swift */,
 				CF43C4C51B268DDE00C09918 /* ViewController.swift */,
 				17B5A02C1B28EACA002EC708 /* GameProvider.swift */,
 				1715DA561B28F1AB00D34C68 /* Game.swift */,
 				CF43C4C71B268DDE00C09918 /* Main.storyboard */,
+				CF4FD39A1B2A597000330645 /* MyCollectionViewController.swift */,
 				CF43C4CA1B268DDE00C09918 /* Images.xcassets */,
 				CF43C4CC1B268DDE00C09918 /* LaunchScreen.xib */,
 				CF43C4C11B268DDE00C09918 /* Supporting Files */,
@@ -229,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF4FD3991B2A2B5E00330645 /* letterCollectionViewCell.xib in Resources */,
 				CF43C4C91B268DDE00C09918 /* Main.storyboard in Resources */,
 				CF43C4CE1B268DDE00C09918 /* LaunchScreen.xib in Resources */,
 				CF43C4CB1B268DDE00C09918 /* Images.xcassets in Resources */,
@@ -299,6 +309,8 @@
 			files = (
 				CF43C4C61B268DDE00C09918 /* ViewController.swift in Sources */,
 				CF43C4C41B268DDE00C09918 /* AppDelegate.swift in Sources */,
+				CF4FD39B1B2A597000330645 /* MyCollectionViewController.swift in Sources */,
+				CF4FD3981B2A2B5E00330645 /* letterCollectionViewCell.swift in Sources */,
 				17B5A02D1B28EACA002EC708 /* GameProvider.swift in Sources */,
 				1715DA571B28F1AB00D34C68 /* Game.swift in Sources */,
 			);

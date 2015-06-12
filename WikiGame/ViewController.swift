@@ -9,15 +9,14 @@
 import UIKit
 import Foundation
 
-class ViewController: UIViewController, GameReader {
+class ViewController: UIViewController, GameReader, UICollectionViewDataSource, UICollectionViewDelegate {
     
     @IBOutlet weak var extractLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     var titleString = ""
     @IBOutlet weak var labelView: UIView!
-    @IBOutlet weak var keyboardView: UIView!
-    
-    @IBOutlet var aButton: UIButton!
+    @IBOutlet var collectionView: UICollectionView!
+    var game: Game = Game(title: "title", extract: "extract")
     
     override func viewDidLoad() {
         
@@ -33,7 +32,10 @@ class ViewController: UIViewController, GameReader {
         
         labelView.layer.cornerRadius = 10
         
-        
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        let nib = UINib(nibName: "letterCollectionViewCell", bundle: nil)
+        collectionView.registerNib(nib, forCellWithReuseIdentifier: "letterCell")
         
     }
     
@@ -71,6 +73,7 @@ class ViewController: UIViewController, GameReader {
     
     func receivedNewGame(game: Game) {
         //TODO: something
+        self.game = game
         updateUI(game)
     }
     
@@ -116,10 +119,24 @@ class ViewController: UIViewController, GameReader {
 		
 		for (var i = 0; i < characters.count; i++) {
             if characters[i] == " " { continue }
-			characters2[i] = characters[i] == character ? character : "X"
+			characters2[i] = String(characters[i]).lowercaseString == String(character).lowercaseString ? character : "X"
 		}
 		return String(characters2)
 	
+    }
+    
+    //MARK: On collectionViewCell tapped
+    
+    func processGuess(titleString: String, originalString: String, guess: Character) -> String {
+        
+        let characters = Array(originalString)
+        var characters2 = Array(titleString)
+        
+        for (var i = 0; i < characters.count; i++) {
+            characters2[i] = String(characters[i]).lowercaseString == String(guess).lowercaseString ? guess : characters2[i]
+        }
+        return String(characters2)
+        
     }
     
     func showSomeLetters(){
@@ -144,5 +161,39 @@ class ViewController: UIViewController, GameReader {
         }
 		
     }
+    
+    
+    //MARK: UICollectionViewDataSource
+    
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 26
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("letterCell", forIndexPath: indexPath) as! letterCollectionViewCell
+        let row = indexPath.row
+        cell.letter = String(UnicodeScalar(65+row))
+        return cell
+        
+    }
+    
+    //MARK: UICollectionViewDelegate
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("letterCell", forIndexPath: indexPath) as! letterCollectionViewCell
+        titleLabel.text = processGuess(titleLabel.text!, originalString: game.title, guess: Character(cell.keyboardButton.titleLabel!.text!))
+        
+    }
+/*
+    extension String {
+        func
+    }
+  */
 }
 
