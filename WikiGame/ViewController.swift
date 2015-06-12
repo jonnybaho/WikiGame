@@ -80,7 +80,6 @@ class ViewController: UIViewController, GameReader, UICollectionViewDataSource, 
     }
     
     func receivedNewGame(game: Game) {
-        //TODO: something
         self.game = game
         updateUI(game)
     }
@@ -140,7 +139,8 @@ class ViewController: UIViewController, GameReader, UICollectionViewDataSource, 
 		var characters2 = Array(string)
 		
 		for (var i = 0; i < characters.count; i++) {
-			characters2[i] = String(characters[i]).uppercaseString == String(guess).uppercaseString ? characters[i] : characters2[i]
+			let characterCurr = String(characters[i]).stringByFoldingWithOptions(.DiacriticInsensitiveSearch, locale: NSLocale.currentLocale())
+			characters2[i] = String(characterCurr).uppercaseString == String(guess).uppercaseString ? characters[i] : characters2[i]
 		}
 		return String(characters2)
 	}
