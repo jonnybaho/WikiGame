@@ -55,7 +55,7 @@ class ViewController: UIViewController, GameReader, UICollectionViewDataSource, 
         (?=.)    means followed by .
         */
         
-        titleString = game.title.uppercaseString
+        titleString = game.title
         let titleStringArr = titleString.componentsSeparatedByString(" ")
         var parsedString = game.extract
         
