@@ -87,6 +87,9 @@ class ViewController: UIViewController, GameReader, UICollectionViewDataSource, 
 	}
 	
 	func receivedNewGame(game: Game) {
+//		let newGame = Game(title: "hello", extract: "hello")
+//		self.game = newGame
+//		updateUI(newGame)
 		self.game = game
 		updateUI(game)
 	}
@@ -224,7 +227,7 @@ class ViewController: UIViewController, GameReader, UICollectionViewDataSource, 
 	
 	func updateTotalScore() {
 		total += points
-		totalScore.text = "Total Score: \(points)"
+		totalScore.text = "Total Score: \(total)"
 	}
 	
 	func saveTotalScore() {
