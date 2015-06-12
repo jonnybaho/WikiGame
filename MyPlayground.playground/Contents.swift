@@ -32,3 +32,6 @@ func processGuess(string: String, originalString: String, guess:Character) -> St
 let ans = processGuess("SXXXX", "STEVE", "T")
 let ans2 = processGuess(ans, "STEVE", "E")
 processGuess(ans2, "STEVE", "V")
+
+
+contains("hello", "E")

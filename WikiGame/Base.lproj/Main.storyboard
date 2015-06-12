@@ -99,7 +99,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Points:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQG-eu-6Bc">
-                                <rect key="frame" x="492.5" y="30" width="53.5" height="21"/>
+                                <rect key="frame" x="492" y="30" width="53.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Score:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTJ-p3-1ye">
+                                <rect key="frame" x="254.5" y="30.5" width="91" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -127,10 +133,13 @@
                             <constraint firstItem="vBT-LJ-Ry1" firstAttribute="top" secondItem="UQG-eu-6Bc" secondAttribute="bottom" constant="4" id="2Ix-5Z-rR9"/>
                             <constraint firstItem="vBT-LJ-Ry1" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="55" id="454-gg-7sr"/>
                             <constraint firstItem="qZZ-W7-LUH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="4" id="5Kq-Bb-YUS"/>
+                            <constraint firstItem="UQG-eu-6Bc" firstAttribute="baseline" secondItem="SQD-OL-FoM" secondAttribute="baseline" id="6V0-1b-U28"/>
+                            <constraint firstAttribute="centerX" secondItem="cTJ-p3-1ye" secondAttribute="centerX" id="6V9-vC-KwB"/>
                             <constraint firstItem="Bg0-RD-tP2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="7" id="7Xe-tU-Add"/>
                             <constraint firstItem="Bg0-RD-tP2" firstAttribute="trailing" secondItem="kLW-U1-O5p" secondAttribute="trailing" id="7sy-6y-mwG"/>
                             <constraint firstItem="kLW-U1-O5p" firstAttribute="top" secondItem="vBT-LJ-Ry1" secondAttribute="bottom" constant="8" symbolic="YES" id="CD0-HI-eTg"/>
                             <constraint firstItem="vBT-LJ-Ry1" firstAttribute="trailing" secondItem="qZZ-W7-LUH" secondAttribute="trailing" id="Dgy-2r-IvL"/>
+                            <constraint firstItem="UQG-eu-6Bc" firstAttribute="baseline" secondItem="Bg0-RD-tP2" secondAttribute="baseline" constant="-3" id="Gzp-vW-aLR"/>
                             <constraint firstItem="kLW-U1-O5p" firstAttribute="top" secondItem="Bg0-RD-tP2" secondAttribute="bottom" constant="46" id="Mb8-mw-Ta7"/>
                             <constraint firstItem="qZZ-W7-LUH" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Nda-GT-Wdg"/>
                             <constraint firstItem="kLW-U1-O5p" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="SVw-dS-EcS"/>
@@ -142,6 +151,7 @@
                             <constraint firstItem="UQG-eu-6Bc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="YKn-QD-Lmn"/>
                             <constraint firstItem="kLW-U1-O5p" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="gds-tf-3um"/>
                             <constraint firstItem="SQD-OL-FoM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="lXG-wa-TrM"/>
+                            <constraint firstItem="cTJ-p3-1ye" firstAttribute="baseline" secondItem="SQD-OL-FoM" secondAttribute="baseline" id="m8W-tc-fqI"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qZZ-W7-LUH" secondAttribute="bottom" constant="8" symbolic="YES" id="ngl-RI-IjI"/>
                         </constraints>
                     </view>
@@ -151,6 +161,7 @@
                         <outlet property="labelView" destination="kLW-U1-O5p" id="YKp-ZS-nye"/>
                         <outlet property="pointsLabel" destination="Bg0-RD-tP2" id="uxF-62-H3c"/>
                         <outlet property="titleLabel" destination="vBT-LJ-Ry1" id="DC4-e9-uhH"/>
+                        <outlet property="totalScore" destination="cTJ-p3-1ye" id="04d-iv-bXS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

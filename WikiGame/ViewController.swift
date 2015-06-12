@@ -19,9 +19,11 @@ class ViewController: UIViewController, GameReader, UICollectionViewDataSource, 
 	var game: Game = Game(title: "title", extract: "extract")
 	var characterArray: [Character] = []
 	var points = 500
+	var total = 0
 	@IBOutlet var pointsLabel: UILabel!
 	let gameProvider: GameProvider = GameProvider()
 	
+	@IBOutlet weak var totalScore: UILabel!
 	
 	override func viewDidLoad() {
 		
@@ -30,6 +32,8 @@ class ViewController: UIViewController, GameReader, UICollectionViewDataSource, 
 		
 		//TODO: Get the JSON and parse it
 		
+		total = getSavedTotalScore()
+		updateTotalScore()
 		initializeCharacterArray()
 		
 		gameProvider.delegate = self
@@ -84,8 +88,6 @@ class ViewController: UIViewController, GameReader, UICollectionViewDataSource, 
 	
 	func receivedNewGame(game: Game) {
 		self.game = game
-		points = 500
-		pointsLabel.text = "500"
 		updateUI(game)
 	}
 	
@@ -123,14 +125,15 @@ class ViewController: UIViewController, GameReader, UICollectionViewDataSource, 
 		let characters = Array(originalString)
 		var characters2 = Array(string)
 		
-		if ((originalString.rangeOfString(String(guess))) != nil){
+		let upperCaseGuess = Character(String(guess).uppercaseString)
+		if contains(originalString.uppercaseString, upperCaseGuess) {
 			
 			for (var i = 0; i < characters.count; i++) {
 				let characterCurr = String(characters[i]).stringByFoldingWithOptions(.DiacriticInsensitiveSearch, locale: NSLocale.currentLocale())
 				characters2[i] = String(characterCurr).uppercaseString == String(guess).uppercaseString ? characters[i] : characters2[i]
 			}
 			
-		}else{
+		} else {
 			
 			incorrectAnswer()
 			
@@ -191,12 +194,17 @@ class ViewController: UIViewController, GameReader, UICollectionViewDataSource, 
 		let originalString = game.title
 		let guess = characterArray[indexPath.row]
 		titleLabel.text = processGuess(titleLabel.text!, originalString: game.title, guess: characterArray[indexPath.row])
+		if gameFinished(titleLabel.text!) {
+			updateTotalScore()
+			saveTotalScore()
+			resetPoints()
+		}
 		
 	}
 	
 	func incorrectAnswer(){
-		if (points >= 0){
-			points = points-50
+		if (points > 0){
+			points = points-50 >= 0 ? points-50 : 0
 			pointsLabel.text = "\(points)"
 		}
 	}
@@ -206,6 +214,33 @@ class ViewController: UIViewController, GameReader, UICollectionViewDataSource, 
 	
 	@IBAction func newGameButtonPressed(sender: AnyObject) {
 		gameProvider.getGameObject()
+	}
+	
+	//MARK: --
+	
+	func gameFinished(gameString: String) -> Bool {
+		return gameString == game.title
+	}
+	
+	func updateTotalScore() {
+		total += points
+		totalScore.text = "Total Score: \(points)"
+	}
+	
+	func saveTotalScore() {
+		let userDefaults = NSUserDefaults.standardUserDefaults()
+		userDefaults.setInteger(total, forKey: "totalScore")
+		userDefaults.synchronize()
+	}
+	
+	func getSavedTotalScore() -> Int {
+		let userDefaults = NSUserDefaults.standardUserDefaults()
+		return userDefaults.integerForKey("totalScore")
+	}
+	
+	func resetPoints() {
+		points = 500
+		pointsLabel.text = "500"
 	}
 	
 	
